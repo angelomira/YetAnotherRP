@@ -1,0 +1,63 @@
+{
+  "name": "yetanotherrp",
+  "version": "1.0.0",
+  "description": "Custom client for Discord Rich Presence, project created for Computer Science (IT)",
+  "main": "main.ts",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "prepare": "husky install && cd scripts/python && py -m venv venv",
+    "prepare:husky": "husky install",
+    "prepare:python": "cd scripts/python && py -m venv venv",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelomira/YetAnotherRP.git"
+  },
+  "keywords": [
+    "discord",
+    "discord-rich-presence",
+    "custom-rp"
+  ],
+  "author": "angelomira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angelomira/YetAnotherRP/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "sh .husky/pre-commit",
+      "commit-msg": "sh .husky/commit-msg"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "homepage": "https://github.com/angelomira/YetAnotherRP#readme",
+  "devDependencies": {
+    "@types/diff": "^5.0.3",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.5.7",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "builtin-modules": "^3.3.0",
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.19.2",
+    "eslint": "^8.48.0",
+    "fs-extra": "^11.1.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3",
+    "python": "^0.0.4",
+    "standard-version": "^9.5.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  }
+}
