@@ -13,7 +13,15 @@
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
-    "release:major": "standard-version --release-as major"  
+    "release:major": "standard-version --release-as major",
+    "lint:docs-relative-links": "electron-lint-markdown-links --root docs \"**/*.md\"",
+    "lint:markdownlint": "electron-markdownlint \"*.md\" \"docs/**/*.md\"",
+    "lint:ts-check-js-in-markdown": "electron-lint-markdown-ts-check --root docs \"**/*.md\" --ignore \"breaking-changes.md\"",
+    "lint:js-in-markdown": "electron-lint-markdown-standard --root docs \"**/*.md\"",
+    "create-api-json": "node script/create-api-json.js",
+    "create-typescript-definitions": "npm run create-api-json && electron-typescript-definitions --api=electron-api.json && node spec/ts-smoke/runner.js",
+    "gn-typescript-definitions": "npm run create-typescript-definitions && shx cp electron.d.ts",
+    "pretest": "npm run create-typescript-definitions"
   },
   "repository": {
     "type": "git",
