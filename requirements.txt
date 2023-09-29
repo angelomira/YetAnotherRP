@@ -1,0 +1,5 @@
+pypresence==4.3.0
+SQLAlchem==2.0.21
+pystmark==0.5.3
+pytest==7.4.2
+Eel==0.16.0
