@@ -1,30 +1,22 @@
 import os
 import zipfile
 
-<<<<<<< Updated upstream
-index_js_path = 'out/main.js'
-manifest_path = 'manifest.json'
+zip_name = 'archive.zip'
+dir_path = '.'
 output_zip_path = 'out/plugins-output.zip'
-=======
-index_js_path = "out/main.js"
-manifest_path = "manifest.json"
-output_zip_path = "out/plugins-output.zip"
->>>>>>> Stashed changes
 
-# Check if the required files exist
-if not os.path.exists(index_js_path):
-    print(f"Error: {index_js_path} does not exist.")
-    exit(1)
 
-if not os.path.exists(manifest_path):
-    print(f"Error: {manifest_path} does not exist.")
+if not os.path.exists(dir_path):
+    print(f"Error: {dir_path} does not exist.")
     exit(1)
 
 os.makedirs(os.path.dirname(output_zip_path), exist_ok=True)
 
-# Create a new ZIP archive
-with zipfile.ZipFile(output_zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
-    zipf.write(index_js_path, arcname="main.js")
-    zipf.write(manifest_path, arcname="manifest.json")
+with zipfile.ZipFile(output_zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+    for root, dirs, files in os.walk(dir_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            rel_path = os.path.relpath(file_path, dir_path)
+            zipf.write(file_path, arcname=rel_path)
 
 print(f"ZIP archive created at {output_zip_path}")
