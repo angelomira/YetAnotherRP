@@ -10,8 +10,9 @@ Unfortunately Discord does not provide some features to interact with its API, s
 
 ### Built With
 
-* [![Python][Python.js]][Python-url]
-* [![JavaScript][JavaScript.js]][JavaScript-url]
+- Python 3.10
+- Javascript
+- Electron
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -30,7 +31,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [Discord Developers Portal](https://discord.com/developers/applications)
 2. Clone the repo
    ```sh
    git clone https://github.com/angelomira/YetAnotherRP.git
@@ -39,7 +40,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Enter your API key in `config.js`
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
